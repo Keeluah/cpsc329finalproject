@@ -7,10 +7,7 @@ package cpsc329FinalProject;
 public class gameRunner {
 	public static void main(String[] args) {
 		gameLogic gameL = new gameLogic();
+		gameGUI mGUI = new gameGUI();
 		int ASCII = 0;
-		do {
-		ASCII = gameL.generateChar(4);
-		System.out.println(Character.toString((char) ASCII));
-		} while (ASCII != 34);
 	}
 }

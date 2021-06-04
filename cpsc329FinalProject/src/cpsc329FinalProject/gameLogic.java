@@ -1,5 +1,6 @@
 package cpsc329FinalProject;
 
+import java.util.ArrayList;
 import java.util.Random;
 
 // ASCII Table to be Used
@@ -75,5 +76,50 @@ public class gameLogic {
 		default:
 			return(randomChar);
 		}
+	}
+	
+	public int calcSelection(int rounds) {
+		// Current Round Setup:
+		// 1-2 -- Very Easy (Lowers)
+		// 3-4 -- Easy (Lower+Caps)
+		// 5-7 -- Normal (Lower + Caps + Nums)
+		// 8-10 -- Hard (Lower + Caps + Nums)
+		int veasy = 1, easy = 2, norm = 3, hard = 4;
+		
+		switch(rounds) {
+		case 1:
+			return(veasy);
+		case 2:
+			return(veasy);
+		case 3:
+			return(easy);
+		case 4:
+			return(easy);
+		case 5:
+			return(norm);
+		case 6:
+			return(norm);
+		case 7:
+			return(norm);
+		case 8:
+			return(hard);
+		case 9:
+			return(hard);
+		case 10:
+			return(hard);
+		default:
+			// If the rounds are messed up.
+			return(veasy);
+		}
+	}
+	
+	// Default 'pLength' is 10, can be modified in future for dynamic, if needed.
+	public ArrayList<Integer> createPW(int round, int pLength) {
+		ArrayList pWord = new ArrayList<Integer>();
+		int currentSelection = calcSelection(round);
+		for (int i = 0; i < pLength; i++) {
+			pWord.add(generateChar(currentSelection));
+		}
+		return(pWord);
 	}
 }
