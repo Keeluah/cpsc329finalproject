@@ -114,12 +114,32 @@ public class gameLogic {
 	}
 	
 	// Default 'pLength' is 10, can be modified in future for dynamic, if needed.
-	public ArrayList<Integer> createPW(int round, int pLength) {
-		ArrayList pWord = new ArrayList<Integer>();
+	public String createPW(int round, int pLength) {
+		String pWord = "";
 		int currentSelection = calcSelection(round);
 		for (int i = 0; i < pLength; i++) {
-			pWord.add(generateChar(currentSelection));
+			pWord = pWord + (Character.toString((char) generateChar(currentSelection)));
 		}
 		return(pWord);
+	}
+	
+	public pwdStruct genLvl(int round, int pLength, int lr, int hr) {
+		String password = createPW(round, pLength);
+		Random r = new Random();
+		int limit = hr - lr + 1;
+		int key = 0;
+		while(key == 0) key = lr + r.nextInt(limit);
+		String encrypted = encrypt(password, key);
+		pwdStruct toReturn = new pwdStruct(password, encrypted, key);
+		return toReturn;
+	}
+	
+	public String encrypt(String pwd, int key) {
+		String toReturn = "";
+		for(int i = 0; i < pwd.length(); i++) {
+			int c = (int)pwd.charAt(i) + key;
+			toReturn = toReturn + Character.toString((char) c);
+		}
+		return toReturn;
 	}
 }
