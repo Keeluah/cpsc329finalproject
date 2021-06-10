@@ -7,7 +7,7 @@ import java.util.Scanner;
 public class gameRunner {
 	public static void main(String[] args) {
 		gameLogic gameL = new gameLogic();
-		//gameGUI mGUI = new gameGUI();
+		gameGUI mGUI = new gameGUI();
 		//int ASCII = 0;
 		Scanner in = new Scanner(System.in);
 		int passed = 0;

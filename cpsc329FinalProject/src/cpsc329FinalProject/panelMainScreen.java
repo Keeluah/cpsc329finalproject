@@ -16,6 +16,7 @@ public class panelMainScreen extends JPanel {
 	 */
 	public panelMainScreen(JPanel mainGUI) {
 		setLayout(null);
+		setBounds(100, 100, 750, 500);
 		JLabel lblAsciiEncryptionGame = new JLabel("ASCII Encryption Game");
 		lblAsciiEncryptionGame.setBounds(141, 28, 134, 14);
 		add(lblAsciiEncryptionGame);

@@ -15,6 +15,7 @@ public class panelGameRound extends JPanel {
 	public panelGameRound(int round, JPanel mainGUI) {
 		cRound = round;
 		setLayout(null);
+		setBounds(100, 100, 750, 500);
 		JLabel lblThisIsA = new JLabel("Round " + cRound);
 		lblThisIsA.setBounds(10, 11, 56, 14);
 		add(lblThisIsA);
