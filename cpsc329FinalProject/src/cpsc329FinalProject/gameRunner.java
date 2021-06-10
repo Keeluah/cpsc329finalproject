@@ -1,5 +1,6 @@
 package cpsc329FinalProject;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 // Imports gameLogic & gameGUI
 // Handles the operations between the two classes
@@ -7,7 +8,7 @@ import java.util.Scanner;
 public class gameRunner {
 	public static void main(String[] args) {
 		gameLogic gameL = new gameLogic();
-		pwdStruct level = null;
+		ArrayList<pwdStruct> levels = new ArrayList<pwdStruct>();
 		
 		//Scanner in = new Scanner(System.in);
 		//int passed = 0;
@@ -15,9 +16,9 @@ public class gameRunner {
 		double times[] = new double[totalLevels];
 		
 		for(int i = 0; i < totalLevels; i++) {
-			level = gameL.genLvl(i, 10, -4, 4);
+			levels.add(gameL.genLvl(i, 10, -4, 4));
 		}
-		gameGUI mGUI = new gameGUI(level, times, totalLevels);
+		gameGUI mGUI = new gameGUI(levels, times, totalLevels);
 		
 		/*
 		Scanner in = new Scanner(System.in);

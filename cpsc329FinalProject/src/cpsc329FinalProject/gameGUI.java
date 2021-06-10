@@ -10,25 +10,16 @@ import javax.swing.border.EmptyBorder;
 import javax.swing.JLabel;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
 import java.awt.event.ActionEvent;
 
 public class gameGUI extends JFrame {
-	private pwdStruct gLevels;
-	private double[] times;
-	private int totalLevels;
-	
 	private JPanel gameMGUI;
-	
-	public gameGUI(pwdStruct levels, double[] times, int totalLevels) {
-		gLevels = levels;
-		this.times = times;
-		this.totalLevels = totalLevels;
-	}
 	
 	/**
 	 * Create the frame.
 	 */
-	public gameGUI() {
+	public gameGUI(ArrayList<pwdStruct> gLevels, double[] times, int totalLevels) {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 750, 500);
 		gameMGUI = new JPanel();

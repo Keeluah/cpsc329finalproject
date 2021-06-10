@@ -3,6 +3,8 @@ package cpsc329FinalProject;
 import java.awt.CardLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
+
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -19,7 +21,7 @@ public class panelMainScreen extends JPanel {
 	 * Create the panel.
 	 */
 	
-	public panelMainScreen(JPanel mainGUI, pwdStruct levels, double[] times, int totalLevels) {
+	public panelMainScreen(JPanel mainGUI, ArrayList<pwdStruct> levels, double[] times, int totalLevels) {
 		int startRound = 1;
 		setBounds(100, 100, 750, 500);
 		JLabel lblAsciiEncryptionGame = new JLabel("ASCII Encryption Game");
@@ -64,6 +66,4 @@ public class panelMainScreen extends JPanel {
 		);
 		setLayout(groupLayout);
 	}
-
-
 }
