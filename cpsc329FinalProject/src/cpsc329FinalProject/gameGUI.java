@@ -20,6 +20,7 @@ public class gameGUI extends JFrame {
 	 * Create the frame.
 	 */
 	public gameGUI(ArrayList<pwdStruct> gLevels, double[] times, int totalLevels) {
+		setTitle("CPSC329 ASCII Encryption Game");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 750, 500);
 		gameMGUI = new JPanel();
@@ -30,17 +31,12 @@ public class gameGUI extends JFrame {
 		gameMGUI.setLayout(new CardLayout());
 		gameMGUI.add(new panelMainScreen(gameMGUI, gLevels, times, totalLevels));
 		
-		// 10 Rounds, Create 10 Panels to add to the cardLayout
-		//gameMGUI.add(new panelGameRound(gameMGUI, ));
-		
 		// Old Code, Creates 10 Panels Immediately
 		/*
 		for(int i = 1; i <= 10; i++) {
 			gameMGUI.add(new panelGameRound(gameMGUI, ));
 		}
 		*/
-		
-		//gameMGUI.add(new panelResultScreen());
 		this.setVisible(true);
 		
 	}
