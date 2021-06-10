@@ -7,8 +7,19 @@ import java.util.Scanner;
 public class gameRunner {
 	public static void main(String[] args) {
 		gameLogic gameL = new gameLogic();
-		gameGUI mGUI = new gameGUI();
-		//int ASCII = 0;
+		pwdStruct level = null;
+		
+		//Scanner in = new Scanner(System.in);
+		//int passed = 0;
+		int totalLevels = 10;
+		double times[] = new double[totalLevels];
+		
+		for(int i = 0; i < totalLevels; i++) {
+			level = gameL.genLvl(i, 10, -4, 4);
+		}
+		gameGUI mGUI = new gameGUI(level, times, totalLevels);
+		
+		/*
 		Scanner in = new Scanner(System.in);
 		int passed = 0;
 		int totalLevels = 10;
@@ -50,5 +61,6 @@ public class gameRunner {
 				System.out.println("Level " + i + ": Incomplete");
 			}
 		}
+		*/
 	}
 }

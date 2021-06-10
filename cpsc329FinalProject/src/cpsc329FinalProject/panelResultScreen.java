@@ -8,7 +8,7 @@ public class panelResultScreen extends JPanel {
 	/**
 	 * Create the panel.
 	 */
-	public panelResultScreen() {
+	public panelResultScreen(JPanel mainGUI, pwdStruct levels, double[] times, int round, int totalLevels) {
 		setBounds(100, 100, 750, 500);
 		JLabel lblThisWouldBe = new JLabel("This would be the end");
 		add(lblThisWouldBe);
