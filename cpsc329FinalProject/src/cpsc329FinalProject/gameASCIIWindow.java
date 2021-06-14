@@ -17,9 +17,14 @@ public class gameASCIIWindow extends JFrame{
 	//Image credit: https://computersciencewiki.org/index.php/File:Ascii_table.png
 	//Getting the image onto the JFrame: https://stackoverflow.com/questions/299495/how-to-add-an-image-to-a-jpanel
 	public gameASCIIWindow() {
+		// Setting title of the JFrame
 		setTitle("ASCII Table");
+		// Dispose of JFrame when the JFrame is closed
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+		// Bounds of JFrame
 		setBounds(125, 125, 856, 602);
+		
+		// Declaring the img (ASCII table to be placed in the JFrame)
 		BufferedImage img;
 		try {
 			img = ImageIO.read(new File("Ascii_table.png"));
@@ -29,6 +34,7 @@ public class gameASCIIWindow extends JFrame{
 			JLabel lblError = new JLabel("Error in opening ASCII table");
 			this.add(lblError);
 		}
+		// Set JFrame to be visible
 		this.setVisible(true);
 	}
 	

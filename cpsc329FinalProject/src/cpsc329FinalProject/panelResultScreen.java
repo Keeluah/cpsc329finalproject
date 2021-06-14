@@ -17,6 +17,7 @@ public class panelResultScreen extends JPanel {
 	 * Create the panel.
 	 */
 	public panelResultScreen(JPanel mainGUI, ArrayList<pwdStruct> levels, double[] times, int round, int totalLevels) {
+		// Set bounds of the JPanel
 		setBounds(100, 100, 750, 500);
 		
 		// Label that displays 'Final scores' at the top
@@ -27,7 +28,8 @@ public class panelResultScreen extends JPanel {
 		JPanel timerPanel = new JPanel();
 		// Making a Group Layout for this JPanel (panelResultScreen)
 		GroupLayout groupLayout = new GroupLayout(this);
-		// WindowBuilder setup
+		
+		// WindowBuilder code
 		groupLayout.setHorizontalGroup(
 			groupLayout.createParallelGroup(Alignment.LEADING)
 				.addGroup(groupLayout.createSequentialGroup()

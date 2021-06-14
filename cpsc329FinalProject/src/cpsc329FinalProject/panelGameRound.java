@@ -24,8 +24,11 @@ public class panelGameRound extends JPanel {
 	 * Create the panel.
 	 */
 	public panelGameRound(JPanel mainGUI, ArrayList<pwdStruct> levels, double[] times, int round, int totalLevels) {
+		// Declare 'start' as the current system time in Milliseconds
 		double start = System.currentTimeMillis();
+		// Declare bounds
 		setBounds(100, 100, 750, 500);
+		// Declaring variables to be used
 		cRound = round;
 		gLevels = levels;
 		this.times = times;
@@ -94,6 +97,7 @@ public class panelGameRound extends JPanel {
 			}
 		});
 		
+		// Button that, when clicked, makes the JFrame with the ASCII table appear
 		JButton btnAscii = new JButton("ASCII Table");
 		btnAscii.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
@@ -121,10 +125,7 @@ public class panelGameRound extends JPanel {
 		JLabel lblEnterDecryptedPassword = new JLabel("Enter Decrypted Password:");
 		lblEnterDecryptedPassword.setFont(new Font("Tahoma", Font.PLAIN, 15));
 		
-		// Temporary Label that displays the correct input, for testing and until implementation of ASCII Table
-		JLabel lblPasswordIs = new JLabel("PASSWORD IS: " + levels.get(round-1).getPassword());
-		
-		
+		// WindowBuilder code
 		GroupLayout groupLayout = new GroupLayout(this);
 		groupLayout.setHorizontalGroup(
 			groupLayout.createParallelGroup(Alignment.LEADING)
@@ -138,22 +139,21 @@ public class panelGameRound extends JPanel {
 							.addGap(345))
 						.addGroup(groupLayout.createSequentialGroup()
 							.addGap(256)
-							.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
+							.addGroup(groupLayout.createParallelGroup(Alignment.TRAILING)
 								.addComponent(decryptTxtField, GroupLayout.DEFAULT_SIZE, 294, Short.MAX_VALUE)
 								.addComponent(lblEncPWD, GroupLayout.DEFAULT_SIZE, 294, Short.MAX_VALUE)
 								.addGroup(groupLayout.createSequentialGroup()
 									.addComponent(lblEncryptedPassword, GroupLayout.DEFAULT_SIZE, 155, Short.MAX_VALUE)
 									.addGap(139))
 								.addGroup(groupLayout.createSequentialGroup()
-									.addComponent(btnTheoreticalsuccessButton, GroupLayout.DEFAULT_SIZE, 99, Short.MAX_VALUE)
-									.addGap(195))
-								.addGroup(groupLayout.createSequentialGroup()
-									.addComponent(btnAscii, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-									.addGap(30))
-								.addGroup(groupLayout.createSequentialGroup()
 									.addComponent(lblEnterDecryptedPassword, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
 									.addGap(117))
-								.addComponent(lblWrongInput, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+								.addGroup(groupLayout.createSequentialGroup()
+									.addComponent(btnTheoreticalsuccessButton, GroupLayout.DEFAULT_SIZE, 99, Short.MAX_VALUE)
+									.addPreferredGap(ComponentPlacement.RELATED)
+									.addComponent(btnAscii, GroupLayout.DEFAULT_SIZE, 99, Short.MAX_VALUE)
+									.addGap(90))
+								.addComponent(lblWrongInput, GroupLayout.DEFAULT_SIZE, 294, Short.MAX_VALUE))))
 					.addGap(51)
 					.addComponent(lblLives, GroupLayout.DEFAULT_SIZE, 111, Short.MAX_VALUE)
 					.addGap(38))
@@ -161,9 +161,6 @@ public class panelGameRound extends JPanel {
 					.addContainerGap()
 					.addComponent(lblKey, GroupLayout.DEFAULT_SIZE, 110, Short.MAX_VALUE)
 					.addGap(630))
-				.addGroup(groupLayout.createSequentialGroup()
-					.addGap(21)
-					.addComponent(lblPasswordIs, GroupLayout.DEFAULT_SIZE, 184, Short.MAX_VALUE))
 		);
 		groupLayout.setVerticalGroup(
 			groupLayout.createParallelGroup(Alignment.LEADING)
@@ -179,31 +176,42 @@ public class panelGameRound extends JPanel {
 					.addGap(33)
 					.addComponent(lblEncryptedPassword, GroupLayout.DEFAULT_SIZE, 19, Short.MAX_VALUE)
 					.addPreferredGap(ComponentPlacement.RELATED)
-					.addComponent(lblEncPWD, GroupLayout.DEFAULT_SIZE, 45, Short.MAX_VALUE)
+					.addComponent(lblEncPWD, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
 					.addGap(18)
 					.addComponent(lblEnterDecryptedPassword, GroupLayout.DEFAULT_SIZE, 19, Short.MAX_VALUE)
 					.addGap(7)
-					.addComponent(decryptTxtField, GroupLayout.DEFAULT_SIZE, 34, Short.MAX_VALUE)
+					.addComponent(decryptTxtField)
 					.addGap(18)
-					.addComponent(btnTheoreticalsuccessButton, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-					.addComponent(btnAscii, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-					.addPreferredGap(ComponentPlacement.UNRELATED)
+					.addGroup(groupLayout.createParallelGroup(Alignment.BASELINE)
+						.addComponent(btnTheoreticalsuccessButton, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+						.addComponent(btnAscii, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+					.addGap(18)
 					.addComponent(lblWrongInput, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-					.addGap(56)
-					.addComponent(lblPasswordIs)
-					.addGap(51))
+					.addGap(142))
 		);
 		setLayout(groupLayout);
 	}
 	
-	// Function to grab a String for Difficulty
+	/* Function: getDifficulty
+	 * Parameter: int round
+	 * Uses 'round' to determine the difficulty of the stage
+	 * and returns a String back to the caller
+	 * Returns: String
+	 */
 	private String getDifficulty(int round) {
+		// Declaring all four difficulties
 		String veasy = "Very Easy";
 		String easy = "Easy";
 		String norm = "Normal";
 		String hard = "Hard";
 		
+		// Switch statement for the round integer
 		switch(round) {
+		// Cases 1-2 :: Very Easy
+		// Cases 3-4 :: Easy
+		// Cases 5-7 :: Normal
+		// Cases 8:10 :: Hard
+		// Default :: Very Easy
 		case 1:
 			return(veasy);
 		case 2:

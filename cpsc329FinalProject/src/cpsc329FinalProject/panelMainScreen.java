@@ -22,8 +22,12 @@ public class panelMainScreen extends JPanel {
 	 */
 	
 	public panelMainScreen(JPanel mainGUI, ArrayList<pwdStruct> levels, double[] times, int totalLevels) {
+		// Declare variables to be used
 		int startRound = 1;
+		// Set bounds of this JPanel
 		setBounds(100, 100, 750, 500);
+		
+		// Label for the Title of the game
 		JLabel lblAsciiEncryptionGame = new JLabel("ASCII Encryption Game");
 		lblAsciiEncryptionGame.setFont(new Font("Tahoma", Font.BOLD, 50));
 		lblAsciiEncryptionGame.setHorizontalAlignment(SwingConstants.CENTER);
