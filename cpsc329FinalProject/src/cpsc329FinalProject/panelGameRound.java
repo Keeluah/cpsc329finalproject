@@ -94,6 +94,13 @@ public class panelGameRound extends JPanel {
 			}
 		});
 		
+		JButton btnAscii = new JButton("ASCII Table");
+		btnAscii.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				gameASCIIWindow aw = new gameASCIIWindow();
+			}
+		});
+		
 		// Label to display Difficulty
 		JLabel lblDifficulty = new JLabel("Difficulty: " + getDifficulty(round));
 		lblDifficulty.setFont(new Font("Tahoma", Font.PLAIN, 20));
@@ -141,6 +148,9 @@ public class panelGameRound extends JPanel {
 									.addComponent(btnTheoreticalsuccessButton, GroupLayout.DEFAULT_SIZE, 99, Short.MAX_VALUE)
 									.addGap(195))
 								.addGroup(groupLayout.createSequentialGroup()
+									.addComponent(btnAscii, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+									.addGap(30))
+								.addGroup(groupLayout.createSequentialGroup()
 									.addComponent(lblEnterDecryptedPassword, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
 									.addGap(117))
 								.addComponent(lblWrongInput, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
@@ -176,6 +186,7 @@ public class panelGameRound extends JPanel {
 					.addComponent(decryptTxtField, GroupLayout.DEFAULT_SIZE, 34, Short.MAX_VALUE)
 					.addGap(18)
 					.addComponent(btnTheoreticalsuccessButton, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+					.addComponent(btnAscii, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
 					.addPreferredGap(ComponentPlacement.UNRELATED)
 					.addComponent(lblWrongInput, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
 					.addGap(56)
