@@ -46,7 +46,7 @@ public class panelMainScreen extends JPanel {
 		});
 		
 		// Identification Labels
-		JLabel lblMadeBy = new JLabel("Made By:");
+		JLabel lblMadeBy = new JLabel("Made By: Group 8");
 		JLabel lblEthanHuangcpsc = new JLabel("Ethan Huang (CPSC Maj)");
 		JLabel lblDerrickCatabiancpsc = new JLabel("Derrick Catabian (CPSC Maj)");
 		JLabel lblKevinNgcpsc = new JLabel("Kevin Ng (CPSC Maj)");
