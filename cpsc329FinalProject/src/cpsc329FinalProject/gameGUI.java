@@ -21,7 +21,7 @@ public class gameGUI extends JFrame {
 	 */
 	public gameGUI(ArrayList<pwdStruct> gLevels, double[] times, int totalLevels) {
 		// Set the title of the JFrame
-		setTitle("CPSC329 ASCII Encryption Game");
+		setTitle("D3crypt10n");
 		// Set the JFrame to exit the application when closed
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		// Setting bounds of JFrame

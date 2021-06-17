@@ -28,7 +28,7 @@ public class panelMainScreen extends JPanel {
 		setBounds(100, 100, 750, 500);
 		
 		// Label for the Title of the game
-		JLabel lblAsciiEncryptionGame = new JLabel("ASCII Encryption Game");
+		JLabel lblAsciiEncryptionGame = new JLabel("D3crypt10n");
 		lblAsciiEncryptionGame.setFont(new Font("Tahoma", Font.BOLD, 50));
 		lblAsciiEncryptionGame.setHorizontalAlignment(SwingConstants.CENTER);
 		
@@ -45,6 +45,13 @@ public class panelMainScreen extends JPanel {
 			}
 		});
 		
+		// Identification Labels
+		JLabel lblMadeBy = new JLabel("Made By:");
+		JLabel lblEthanHuangcpsc = new JLabel("Ethan Huang (CPSC Maj)");
+		JLabel lblDerrickCatabiancpsc = new JLabel("Derrick Catabian (CPSC Maj)");
+		JLabel lblKevinNgcpsc = new JLabel("Kevin Ng (CPSC Maj)");
+		JLabel lblSulemanBasitecon = new JLabel("Suleman Basit (ECON Maj)");
+		
 		// GROUP LAYOUT
 		// REF: https://www.youtube.com/watch?v=UXZCjFr_7l8
 		GroupLayout groupLayout = new GroupLayout(this);
@@ -54,10 +61,30 @@ public class panelMainScreen extends JPanel {
 					.addContainerGap()
 					.addComponent(lblAsciiEncryptionGame, GroupLayout.DEFAULT_SIZE, 730, Short.MAX_VALUE)
 					.addContainerGap())
-				.addGroup(Alignment.TRAILING, groupLayout.createSequentialGroup()
+				.addGroup(groupLayout.createSequentialGroup()
 					.addGap(276)
 					.addComponent(btnStart, GroupLayout.DEFAULT_SIZE, 202, Short.MAX_VALUE)
 					.addGap(272))
+				.addGroup(Alignment.TRAILING, groupLayout.createSequentialGroup()
+					.addGap(46)
+					.addComponent(lblMadeBy, GroupLayout.DEFAULT_SIZE, 694, Short.MAX_VALUE)
+					.addContainerGap())
+				.addGroup(Alignment.TRAILING, groupLayout.createSequentialGroup()
+					.addGap(46)
+					.addComponent(lblEthanHuangcpsc, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+					.addContainerGap())
+				.addGroup(Alignment.TRAILING, groupLayout.createSequentialGroup()
+					.addGap(46)
+					.addComponent(lblDerrickCatabiancpsc, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+					.addContainerGap())
+				.addGroup(Alignment.TRAILING, groupLayout.createSequentialGroup()
+					.addGap(46)
+					.addComponent(lblKevinNgcpsc, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+					.addContainerGap())
+				.addGroup(Alignment.TRAILING, groupLayout.createSequentialGroup()
+					.addGap(46)
+					.addComponent(lblSulemanBasitecon, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+					.addContainerGap())
 		);
 		groupLayout.setVerticalGroup(
 			groupLayout.createParallelGroup(Alignment.LEADING)
@@ -66,7 +93,17 @@ public class panelMainScreen extends JPanel {
 					.addComponent(lblAsciiEncryptionGame, GroupLayout.PREFERRED_SIZE, 108, GroupLayout.PREFERRED_SIZE)
 					.addGap(147)
 					.addComponent(btnStart, GroupLayout.DEFAULT_SIZE, 63, Short.MAX_VALUE)
-					.addGap(171))
+					.addGap(38)
+					.addComponent(lblMadeBy, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+					.addPreferredGap(ComponentPlacement.RELATED)
+					.addComponent(lblEthanHuangcpsc, GroupLayout.DEFAULT_SIZE, 14, Short.MAX_VALUE)
+					.addPreferredGap(ComponentPlacement.RELATED)
+					.addComponent(lblDerrickCatabiancpsc, GroupLayout.DEFAULT_SIZE, 14, Short.MAX_VALUE)
+					.addPreferredGap(ComponentPlacement.RELATED)
+					.addComponent(lblKevinNgcpsc, GroupLayout.DEFAULT_SIZE, 14, Short.MAX_VALUE)
+					.addPreferredGap(ComponentPlacement.RELATED)
+					.addComponent(lblSulemanBasitecon, GroupLayout.DEFAULT_SIZE, 14, Short.MAX_VALUE)
+					.addGap(39))
 		);
 		setLayout(groupLayout);
 	}
