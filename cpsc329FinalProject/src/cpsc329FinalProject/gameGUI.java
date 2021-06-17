@@ -10,48 +10,33 @@ import javax.swing.border.EmptyBorder;
 import javax.swing.JLabel;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
 import java.awt.event.ActionEvent;
 
 public class gameGUI extends JFrame {
-
 	private JPanel gameMGUI;
-
-	/**
-	 * Launch the application.
-	 */
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					gameGUI frame = new gameGUI();
-					frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}
-
+	
 	/**
 	 * Create the frame.
 	 */
-	public gameGUI() {
+	public gameGUI(ArrayList<pwdStruct> gLevels, double[] times, int totalLevels) {
+		// Set the title of the JFrame
+		setTitle("CPSC329 ASCII Encryption Game");
+		// Set the JFrame to exit the application when closed
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 450, 300);
+		// Setting bounds of JFrame
+		setBounds(100, 100, 825, 500);
+		
+		// Creating a JPanel that encompasses which JPanel is being shown on the JFrame
 		gameMGUI = new JPanel();
 		gameMGUI.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(gameMGUI);
 		
 		// CardLayout to setup multiple panels for easy transitions
 		gameMGUI.setLayout(new CardLayout());
-		gameMGUI.add(new panelMainScreen(gameMGUI));
+		gameMGUI.add(new panelMainScreen(gameMGUI, gLevels, times, totalLevels));
 		
-		// 10 Rounds, Create 10 Panels to add to the cardLayout
-		for(int i = 1; i <= 10; i++) {
-			gameMGUI.add(new panelGameRound(i, gameMGUI));
-		}
-		
-		gameMGUI.add(new panelResultScreen());
+		// Set the JFrame to be visible
 		this.setVisible(true);
 		
 	}
